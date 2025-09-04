@@ -9,7 +9,7 @@ body {
     overflow: hidden; /* Para evitar scroll si la imagen de fondo es muy grande */
 
     /* IMAGEN DE FONDO DEL ESTADIO */
-    background-image: url('/Plantilla_FC/img/cancha.jpg'); /* Reemplaza esto con la URL o ruta de tu imagen */
+    background-image: url('img/cancha.jpg'); /* Reemplaza esto con la URL o ruta de tu imagen */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
