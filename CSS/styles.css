@@ -1,0 +1,117 @@
+body {
+    font-family: 'Roboto', sans-serif; /* Asegúrate de tener esta fuente o cambia a Arial, sans-serif */
+    color: #E0E0E0; /* Texto blanco grisáceo para contraste */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    overflow: hidden; /* Para evitar scroll si la imagen de fondo es muy grande */
+
+    /* IMAGEN DE FONDO DEL ESTADIO */
+    background-image: url('/img/cancha.jpg'); /* Reemplaza esto con la URL o ruta de tu imagen */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    /* Mantén un ligero oscurecimiento si la imagen es muy brillante */
+    background-color: rgba(0, 0, 0, 0.4); /* Un color oscuro semi-transparente como base */
+    background-blend-mode: multiply; /* Mezcla el color de fondo con la imagen para oscurecerla ligeramente */
+}
+
+/* Contenedor principal para centrar los equipos */
+.container {
+    display: flex;
+    gap: 30px; /* Espacio entre los dos equipos */
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start; /* Alinea los elementos arriba */
+    padding: 30px;
+    /* QUITAMOS EL FONDO DEL CONTAINER para que la transparencia se vea directamente sobre el body */
+    /* background-color: transparent; */ 
+}
+
+.equipo {
+    background-color: rgba(0, 0, 0, 0.4); /* Fondo negro MUY transparente para los recuadros */
+    border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4); /* Sombra para que flote un poco */
+    padding: 25px;
+    text-align: center;
+    width: 320px; /* Ancho fijo para cada recuadro */
+    min-height: 400px; /* Altura mínima para que se vean uniformes */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    border-top: 5px solid #FFD700; /* Línea dorada en la parte superior */
+    backdrop-filter: blur(3px); /* Efecto de desenfoque ligero para que el fondo se vea, pero no opaque el texto */
+    -webkit-backdrop-filter: blur(3px); /* Para compatibilidad con Safari */
+}
+
+h2 {
+    color: #FFD700; /* Título en dorado */
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 2.2em; /* Tamaño del título */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5); /* Sombra brillante */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+th, td {
+    padding: 15px 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Líneas divisorias más sutiles */
+    text-align: left;
+    font-size: 1.1em;
+    color: #E0E0E0; /* Texto de jugadores más claro */
+}
+
+th {
+    background-color: transparent; /* Hacemos el encabezado de la tabla transparente */
+    color: #FFD700; /* Texto dorado en el encabezado */
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-top: none; /* Quitamos la línea superior del encabezado si no es necesaria */
+    border-bottom: 1px solid rgba(255, 215, 0, 0.3); /* Línea inferior dorada para el encabezado */
+}
+
+tr:nth-child(odd) {
+    background-color: transparent; /* Fondo transparente para filas impares */
+}
+
+tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.05); /* Muy ligero fondo para filas pares para diferenciarlas */
+}
+
+tr:hover {
+    background-color: rgba(255, 255, 255, 0.15); /* Resaltado al pasar el ratón más visible */
+}
+
+/* Estilo para los números de jugador */
+td:first-child {
+    font-weight: bold;
+    color: #FFD700; /* Números en dorado */
+    width: 40px;
+    text-align: right;
+    padding-right: 15px;
+}
+
+/* Estilo para los nombres de jugador */
+td:last-child {
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.dragging {
+    opacity: 0.5;
+    transform: scale(1.05);
+    transition: transform 0.2s ease-in-out;
+}
