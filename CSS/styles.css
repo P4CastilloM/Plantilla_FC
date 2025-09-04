@@ -1,62 +1,99 @@
+/* --- ESTILOS GENERALES Y DE FONDO --- */
 body {
-    font-family: 'Roboto', sans-serif; /* Asegúrate de tener esta fuente o cambia a Arial, sans-serif */
-    color: #E0E0E0; /* Texto blanco grisáceo para contraste */
+    font-family: 'Roboto', sans-serif;
+    color: #E0E0E0;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
     min-height: 100vh;
     margin: 0;
-    overflow: hidden; /* Para evitar scroll si la imagen de fondo es muy grande */
-
-    /* IMAGEN DE FONDO DEL ESTADIO */
-    background-image: url('img/cancha.jpg'); /* Reemplaza esto con la URL o ruta de tu imagen */
+    
+    background-image: url('../img/cancha.jpg'); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    /* Mantén un ligero oscurecimiento si la imagen es muy brillante */
-    background-color: rgba(0, 0, 0, 0.4); /* Un color oscuro semi-transparente como base */
-    background-blend-mode: multiply; /* Mezcla el color de fondo con la imagen para oscurecerla ligeramente */
+    background-color: rgba(0, 0, 0, 0.4);
+    background-blend-mode: multiply;
 }
 
-/* Contenedor principal para centrar los equipos */
+/* --- BOTÓN DE CAPTURA --- */
+#capturarBtn {
+    position: fixed; /* Lo fijamos en la pantalla */
+    top: 20px;
+    right: 20px;
+    z-index: 1000; /* Aseguramos que esté por encima de todo */
+    padding: 10px 20px;
+    background-color: #FFD700;
+    color: #333;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s;
+}
+
+#capturarBtn:hover {
+    transform: scale(1.05);
+}
+
+/* --- CONTENEDORES DE EQUIPOS --- */
 .container {
     display: flex;
-    gap: 30px; /* Espacio entre los dos equipos */
+    gap: 30px;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: flex-start; /* Alinea los elementos arriba */
+    align-items: flex-start;
     padding: 30px;
-    /* QUITAMOS EL FONDO DEL CONTAINER para que la transparencia se vea directamente sobre el body */
-    /* background-color: transparent; */ 
+    margin-top: 80px; /* Para que el contenido no quede debajo del botón fijo */
+    margin-bottom: 20px;
 }
 
 .equipo {
-    background-color: rgba(0, 0, 0, 0.4); /* Fondo negro MUY transparente para los recuadros */
+    background-color: rgba(0, 0, 0, 0.4);
     border-radius: 10px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4); /* Sombra para que flote un poco */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
     padding: 25px;
     text-align: center;
-    width: 320px; /* Ancho fijo para cada recuadro */
-    min-height: 400px; /* Altura mínima para que se vean uniformes */
+    width: 320px;
+    min-height: 400px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    border-top: 5px solid #FFD700; /* Línea dorada en la parte superior */
-    backdrop-filter: blur(3px); /* Efecto de desenfoque ligero para que el fondo se vea, pero no opaque el texto */
-    -webkit-backdrop-filter: blur(3px); /* Para compatibilidad con Safari */
+    border-top: 5px solid #FFD700;
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    overflow-y: auto; /* Permite scroll vertical si el contenido excede la altura */
 }
 
+/* --- RESPONSIVE PARA MÓVILES --- */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Apila los equipos uno encima del otro */
+        align-items: center; /* Centra los equipos apilados */
+        gap: 20px;
+    }
+
+    .equipo {
+        width: 90%; /* Ajusta el ancho para ocupar casi toda la pantalla */
+        max-width: 400px;
+        min-height: unset; /* Quita la altura mínima para que se adapte al contenido */
+    }
+}
+
+/* --- ESTILOS DE TEXTO Y TABLA (Iguales que los tuyos, solo por completitud) --- */
 h2 {
-    color: #FFD700; /* Título en dorado */
+    color: #FFD700;
     margin-top: 0;
     margin-bottom: 20px;
-    font-size: 2.2em; /* Tamaño del título */
+    font-size: 2.2em;
     text-transform: uppercase;
     letter-spacing: 2px;
     font-weight: bold;
-    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5); /* Sombra brillante */
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
 }
 
 table {
@@ -67,44 +104,37 @@ table {
 
 th, td {
     padding: 15px 10px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Líneas divisorias más sutiles */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     text-align: left;
     font-size: 1.1em;
-    color: #E0E0E0; /* Texto de jugadores más claro */
+    color: #E0E0E0;
 }
 
 th {
-    background-color: transparent; /* Hacemos el encabezado de la tabla transparente */
-    color: #FFD700; /* Texto dorado en el encabezado */
+    background-color: transparent;
+    color: #FFD700;
     font-weight: normal;
     text-transform: uppercase;
     letter-spacing: 1px;
-    border-top: none; /* Quitamos la línea superior del encabezado si no es necesaria */
-    border-bottom: 1px solid rgba(255, 215, 0, 0.3); /* Línea inferior dorada para el encabezado */
-}
-
-tr:nth-child(odd) {
-    background-color: transparent; /* Fondo transparente para filas impares */
+    border-bottom: 1px solid rgba(255, 215, 0, 0.3);
 }
 
 tr:nth-child(even) {
-    background-color: rgba(255, 255, 255, 0.05); /* Muy ligero fondo para filas pares para diferenciarlas */
+    background-color: rgba(255, 255, 255, 0.05);
 }
 
 tr:hover {
-    background-color: rgba(255, 255, 255, 0.15); /* Resaltado al pasar el ratón más visible */
+    background-color: rgba(255, 255, 255, 0.15);
 }
 
-/* Estilo para los números de jugador */
 td:first-child {
     font-weight: bold;
-    color: #FFD700; /* Números en dorado */
+    color: #FFD700;
     width: 40px;
     text-align: right;
     padding-right: 15px;
 }
 
-/* Estilo para los nombres de jugador */
 td:last-child {
     text-transform: uppercase;
     letter-spacing: 0.5px;
