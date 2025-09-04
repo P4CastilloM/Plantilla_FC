@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plantilla de Jugadores</title>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: #E0E0E0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            background-image: url('/img/cancha.jpg'); /* Reemplaza esta URL con la tuya */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-color: rgba(0, 0, 0, 0.4);
+            background-blend-mode: multiply;
+        }
+
+        .container {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 30px;
+        }
+
+        .equipo {
+            background-color: rgba(0, 0, 0, 0.4);
+            border-radius: 10px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+            padding: 25px;
+            text-align: center;
+            width: 320px;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            border-top: 5px solid #FFD700;
+            backdrop-filter: blur(3px);
+            -webkit-backdrop-filter: blur(3px);
+        }
+
+        h2 {
+            color: #FFD700;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 2.2em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: bold;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th, td {
+            padding: 15px 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: left;
+            font-size: 1.1em;
+            color: #E0E0E0;
+        }
+
+        th {
+            background-color: transparent;
+            color: #FFD700;
+            font-weight: normal;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid rgba(255, 215, 0, 0.3);
+        }
+
+        tr:nth-child(even) {
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+
+        tr:hover {
+            background-color: rgba(255, 255, 255, 0.15);
+        }
+
+        td:first-child {
+            font-weight: bold;
+            color: #FFD700;
+            width: 40px;
+            text-align: right;
+            padding-right: 15px;
+        }
+
+        td:last-child {
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .dragging {
+            opacity: 0.5;
+            transform: scale(1.05);
+            transition: transform 0.2s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <button id="capturarBtn">Guardar Plantilla</button>
+    <div class="container">
+        <div class="equipo">
+            <h2>Equipo 1</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Número</th>
+                        <th>Jugador</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr id="jugador-1">
+                        <td>1</td>
+                        <td>MAURI</td>
+                    </tr>
+                    <tr id="jugador-2">
+                        <td>2</td>
+                        <td>DAVID</td>
+                    </tr>
+                    <tr id="jugador-3">
+                        <td>3</td>
+                        <td>PANCHO</td>
+                    </tr>
+                    <tr id="jugador-4">
+                        <td>4</td>
+                        <td>NACHO</td>
+                    </tr>
+                    <tr id="jugador-5">
+                        <td>5</td>
+                        <td>BENJA</td>
+                    </tr>
+                    <tr id="jugador-6">
+                        <td>6</td>
+                        <td>SERGIO</td>
+                    </tr>
+                    <tr id="jugador-7">
+                        <td>7</td>
+                        <td>AGUSTIN</td>
+                    </tr>
+                    <tr id="jugador-8">
+                        <td>8</td>
+                        <td>-------</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="equipo">
+            <h2>Equipo 2</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Número</th>
+                        <th>Jugador</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr id="jugador-9">
+                        <td>1</td>
+                        <td>JOSE LUIS</td>
+                    </tr>
+                    <tr id="jugador-10">
+                        <td>2</td>
+                        <td>RICARDO</td>
+                    </tr>
+                    <tr id="jugador-11">
+                        <td>3</td>
+                        <td>MIGUEL</td>
+                    </tr>
+                    <tr id="jugador-12">
+                        <td>4</td>
+                        <td>SEBA</td>
+                    </tr>
+                    <tr id="jugador-13">
+                        <td>5</td>
+                        <td>CHACANO</td>
+                    </tr>
+                    <tr id="jugador-14">
+                        <td>6</td>
+                        <td>PABLO</td>
+                    </tr>
+                    <tr id="jugador-15">
+                        <td>7</td>
+                        <td>MATIAS</td>
+                    </tr>
+                    <tr id="jugador-16">
+                        <td>8</td>
+                        <td>JOAKO</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <script>
+    // Función para actualizar los números de los jugadores en una tabla
+    function actualizarNumeros(tabla) {
+        const filas = tabla.querySelectorAll('tr');
+        filas.forEach((fila, index) => {
+            const celdaNumero = fila.querySelector('td');
+            if (celdaNumero) {
+                celdaNumero.textContent = index + 1;
+            }
+        });
+    }
+
+    // Selecciona todos los jugadores y les da la funcionalidad de arrastre
+    const jugadores = document.querySelectorAll('tbody tr');
+    jugadores.forEach(jugador => {
+        jugador.draggable = true;
+
+        jugador.addEventListener('dragstart', (event) => {
+            event.dataTransfer.setData('text/plain', event.target.id);
+            event.target.classList.add('dragging');
+        });
+
+        jugador.addEventListener('dragend', (event) => {
+            event.target.classList.remove('dragging');
+        });
+    });
+
+    // Selecciona las áreas donde se pueden soltar los jugadores
+    const equipos = document.querySelectorAll('table tbody');
+    equipos.forEach(equipo => {
+        equipo.addEventListener('dragover', (event) => {
+            event.preventDefault();
+        });
+
+        equipo.addEventListener('drop', (event) => {
+            event.preventDefault();
+            const idJugador = event.dataTransfer.getData('text/plain');
+            const jugadorArrastrado = document.getElementById(idJugador);
+            
+            if (jugadorArrastrado) {
+                const tablaOrigen = jugadorArrastrado.closest('tbody');
+                const tablaDestino = event.target.closest('tbody');
+                
+                if (tablaDestino) {
+                    tablaDestino.appendChild(jugadorArrastrado);
+                    actualizarNumeros(tablaDestino);
+                    if (tablaOrigen) {
+                        actualizarNumeros(tablaOrigen);
+                    }
+                }
+            }
+        });
+    });
+
+    // Llamada inicial para asegurar que los números estén correctos al cargar
+    equipos.forEach(equipo => {
+        actualizarNumeros(equipo);
+    });
+
+    // --- FUNCIONALIDAD PARA LA CAPTURA ---
+
+    const botonCapturar = document.getElementById('capturarBtn');
+    
+    // Capturaremos el body completo para incluir el fondo
+    const elementoACapturar = document.body; 
+
+    botonCapturar.addEventListener('click', () => {
+        // Oculta el botón de captura antes de tomar la imagen
+        botonCapturar.style.display = 'none';
+
+        // Usa html2canvas para capturar el contenido del body
+        html2canvas(elementoACapturar, {
+            scale: 2, // Aumenta la resolución para mejor calidad
+            backgroundColor: null, // Mantiene el fondo transparente del canvas si no hay bg en body
+            allowTaint: true, // Permite imágenes de diferentes dominios (si aplica)
+            useCORS: true // Permite capturar imágenes con CORS habilitado
+        }).then(canvas => {
+            const imagenUrl = canvas.toDataURL('image/png');
+
+            const enlace = document.createElement('a');
+            enlace.href = imagenUrl;
+            enlace.download = 'plantilla-FC-Cogote-Salado.png'; 
+
+            document.body.appendChild(enlace);
+            enlace.click();
+            document.body.removeChild(enlace);
+        
+            // Vuelve a mostrar el botón
+            botonCapturar.style.display = 'block';
+        });
+    });
+</script>
+</body>
+</html>
