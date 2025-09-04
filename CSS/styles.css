@@ -52,7 +52,7 @@ body {
 }
 
 .equipo {
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(42, 49, 151, 0.185); /* Azul principal del escudo, con 50% de transparencia */
     border-radius: 10px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
     padding: 25px;
@@ -63,7 +63,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    border-top: 5px solid #FFD700;
+    border-top: 5px solid #58E054; /* Verde lima del borde del escudo */
     backdrop-filter: blur(3px);
     -webkit-backdrop-filter: blur(3px);
     overflow-y: auto; /* Permite scroll vertical si el contenido excede la altura */
@@ -86,14 +86,14 @@ body {
 
 /* --- ESTILOS DE TEXTO Y TABLA (Iguales que los tuyos, solo por completitud) --- */
 h2 {
-    color: #FFD700;
+    color: #58E054; /* Verde lima del borde del escudo */
     margin-top: 0;
     margin-bottom: 20px;
     font-size: 2.2em;
     text-transform: uppercase;
     letter-spacing: 2px;
     font-weight: bold;
-    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+     text-shadow: 0 0 10px rgba(88, 224, 84, 0.5); /* Ajusta la sombra para que coincida */
 }
 
 table {
@@ -112,7 +112,7 @@ th, td {
 
 th {
     background-color: transparent;
-    color: #FFD700;
+    color: #58E054; /* Verde lima del borde del escudo */
     font-weight: normal;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -120,7 +120,7 @@ th {
 }
 
 tr:nth-child(even) {
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: rgba(210, 144, 231, 0.05); /* Un lila muy tenue y transparente */
 }
 
 tr:hover {
@@ -129,13 +129,14 @@ tr:hover {
 
 td:first-child {
     font-weight: bold;
-    color: #FFD700;
+    color: #58E054; /* Verde lima del borde del escudo */
     width: 40px;
-    text-align: right;
-    padding-right: 15px;
+    text-align: center;
+    padding-right: 0;
 }
 
 td:last-child {
+    color: #D290E7; /* Lila/Morado claro de "COGOTE SALADO" */
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
