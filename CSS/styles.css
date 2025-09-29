@@ -8,16 +8,27 @@ body {
     align-items: center;
     min-height: 100vh;
     margin: 0;
+}
+/* NUEVOS ESTILOS PARA EL CONTENEDOR DE CAPTURA */
+#capture-container {
+    width: 100vw;
+    min-height: 100vh;
     
-    background-image: url('../img/cancha.jpg'); 
+    /* ESTILOS DE FONDO MOVIDOS AQUÍ DESDE EL BODY */
+    background-image: url('../img/cancha_dia.png'); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-color: rgba(0, 0, 0, 0.4);
     background-blend-mode: multiply;
-}
 
+    /* Asegura que el contenido siga centrado */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
 /* --- BOTÓN DE CAPTURA --- */
 #capturarBtn {
     position: fixed; /* Lo fijamos en la pantalla */
@@ -47,12 +58,13 @@ body {
     justify-content: center;
     align-items: flex-start;
     padding: 30px;
-    margin-top: 80px; /* Para que el contenido no quede debajo del botón fijo */
+    margin-top: 80px;
     margin-bottom: 20px;
 }
 
 .equipo {
-    background-color: rgba(42, 49, 151, 0.185); /* Azul principal del escudo, con 50% de transparencia */
+    /* Eliminamos el backdrop-filter y aumentamos un poco la opacidad del color */
+    background-color: rgba(42, 49, 151, 0.45); 
     border-radius: 10px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
     padding: 25px;
@@ -63,10 +75,10 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    border-top: 5px solid #58E054; /* Verde lima del borde del escudo */
-    backdrop-filter: blur(3px);
-    -webkit-backdrop-filter: blur(3px);
-    overflow-y: auto; /* Permite scroll vertical si el contenido excede la altura */
+    border-top: 5px solid #58E054; 
+    /* backdrop-filter ELIMINADO */
+    /* -webkit-backdrop-filter ELIMINADO */
+    overflow-y: auto;
 }
 
 /* --- RESPONSIVE PARA MÓVILES --- */
@@ -136,7 +148,7 @@ td:first-child {
 }
 
 td:last-child {
-    color: #9752ac; /* Lila/Morado claro de "COGOTE SALADO" */
+    color: #ffffff; /* Lila/Morado claro de "COGOTE SALADO" */
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
