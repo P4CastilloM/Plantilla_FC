@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plantilla de Jugadores</title>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <link rel="stylesheet" href="CSS/styles.css"> 
+</head>
+<body>
+    <div id="capture-container"> 
+        
+        <button id="addPlayerBtn" class="action-btn">Añadir Jugador</button>
+        <button id="deletePlayerBtn" class="action-btn">Eliminar Jugador</button>
+        
+        <!-- <a id="plantilla1" href="plantilla1.html" >Plantilla 1</a> -->
+        <button id="capturarBtn">Guardar Plantilla</button>
+
+        <div class="container">
+            <div class="equipo">
+                <h2>EQUIPO A</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>NÚMERO</th>
+                            <th>JUGADOR</th>
+                        </tr>
+                    </thead>
+                    <tbody id="equipoA-body">
+                        <tr id="jugador-1">
+                            <td>1</td>
+                            <td>MAURI</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="equipo">
+                <h2>EQUIPO B</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>NÚMERO</th>
+                            <th>JUGADOR</th>
+                        </tr>
+                    </thead>
+                    <tbody id="equipoB-body">
+                        <tr id="jugador-9">
+                            <td>1</td>
+                            <td>JOSE LUIS</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div id="addPlayerModal" class="modal-backdrop" style="display: none;">
+        <div class="modal-content">
+            <span class="modal-close" id="closeAddModal">&times;</span>
+            <h2>Añadir Nuevo Jugador</h2>
+            <form id="addPlayerForm">
+                <label for="teamSelect">Equipo:</label>
+                <select id="teamSelect" required>
+                    <option value="A">Equipo A</option>
+                    <option value="B">Equipo B</option>
+                </select>
+                
+                <label for="playerNameInput">Nombre:</label>
+                <input type="text" id="playerNameInput" placeholder="Nombre del jugador" required>
+                
+                <button type="submit">Añadir</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="deletePlayerModal" class="modal-backdrop" style="display: none;">
+        <div class="modal-content">
+            <span class="modal-close" id="closeDeleteModal">&times;</span>
+            <h2>Eliminar Jugador</h2>
+            <form id="deletePlayerForm">
+                <label for="playerDeleteSelect">¿A quién desea eliminar?</label>
+                <select id="playerDeleteSelect" required>
+                    <option value="">Seleccione un jugador...</option>
+                    </select>
+                <button type="submit">Eliminar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="JS/script.js"></script>
+</body>
+</html>

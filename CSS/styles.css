@@ -158,3 +158,172 @@ td:last-child {
     transform: scale(1.05);
     transition: transform 0.2s ease-in-out;
 }
+
+/* --- ESTILOS PARA NUEVOS BOTONES DE ACCIÓN --- */
+.action-btn {
+    position: fixed;
+    top: 20px;
+    z-index: 1000;
+    padding: 10px 20px;
+    background-color: #4CAF50; /* Un verde diferente */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s;
+}
+.action-btn:hover {
+    transform: scale(1.05);
+}
+
+/* Posicionamiento de los nuevos botones */
+#addPlayerBtn {
+    right: 380px; /* Ajusta este valor si se superpone */
+}
+#deletePlayerBtn {
+    right: 540px; /* Ajusta este valor si se superpone */
+    background-color: #f44336; /* Rojo para eliminar */
+}
+
+/* Ajuste de botones existentes para que no se pisen */
+#plantilla1 {
+    right: 200px;
+}
+#capturarBtn {
+    right: 20px;
+}
+
+
+/* --- ESTILOS PARA VENTANAS MODALES --- */
+
+/* El fondo oscuro superpuesto */
+.modal-backdrop {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1050; /* Por encima de todo, excepto el modal */
+    justify-content: center;
+    align-items: center;
+}
+
+/* El contenido del modal (la ventana) */
+.modal-content {
+    /* Estilo similar a tus cajas de equipo */
+    background-color: rgba(42, 49, 151, 0.95); /* Más opaco */
+    border-radius: 10px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+    padding: 30px;
+    width: 90%;
+    max-width: 400px;
+    z-index: 1060; /* Por encima del fondo */
+    border-top: 5px solid #58E054;
+    color: #E0E0E0;
+    position: relative;
+}
+
+/* Botón de cerrar (X) */
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.modal-close:hover {
+    color: #fff;
+}
+
+/* Estilo para los formularios dentro del modal */
+.modal-content h2 {
+    margin-top: 0;
+    text-align: center;
+}
+.modal-content form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.modal-content label {
+    font-weight: bold;
+    color: #58E054;
+    margin-bottom: -10px;
+}
+.modal-content input[type="text"],
+.modal-content select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #58E054;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #E0E0E0;
+    font-size: 1em;
+    box-sizing: border-box; /* Importante para que el padding no rompa el ancho */
+}
+.modal-content select option {
+    background-color: #2a3197;
+    color: #E0E0E0;
+}
+
+.modal-content button {
+    padding: 12px;
+    background-color: #58E054;
+    color: #333;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: transform 0.2s;
+}
+.modal-content button:hover {
+    transform: scale(1.03);
+}
+
+
+
+
+
+
+
+
+
+
+/* --- ESTILO PARA EL BOTÓN DE NUEVA PESTAÑA --- */
+#plantilla1 {
+    /* Posicionamiento y estilos de botón */
+    position: fixed; 
+    top: 20px;
+    right: 200px; /* Posicionamos este botón a la izquierda del botón de captura */
+    z-index: 1000; 
+    padding: 10px 20px;
+    background-color: #58E054; /* Un color para diferenciarlo */
+    color: #333;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s;
+    text-decoration: none; /* Quita el subrayado de enlace */
+    display: inline-block; /* Necesario para que el padding funcione bien */
+}
+
+#plantilla1:hover {
+    transform: scale(1.05);
+}
+
+/* Ajuste para el botón existente (Guardar Plantilla) */
+#capturarBtn {
+    position: fixed; /* Asegura que mantenga la posición fija */
+    top: 20px;
+    right: 20px; /* Vuelve a su posición original, a 20px del borde */
+    /* El resto de estilos se mantiene igual */
+}
