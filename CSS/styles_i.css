@@ -1,0 +1,106 @@
+/* --- ESTILOS GENERALES (Modo Oscuro/Fútbol) --- */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #1a1a1a; /* Fondo oscuro */
+    color: #E0E0E0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.welcome-container {
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+}
+
+/* --- ESTILOS DEL LOGO Y TÍTULO --- */
+
+/* (Logo "FC Cogote Salado") */
+.logo {
+    color: #58E054; /* Verde lima (usado en tu plantilla anterior) */
+    font-size: 2.5em; /* Tamaño grande */
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    text-shadow: 0 0 10px rgba(88, 224, 84, 0.4);
+}
+
+/* (Bienvenidos) */
+h1 {
+    color: #ffffff;
+    font-size: 2.2em;
+    margin-top: 0;
+    margin-bottom: 40px; /* Espacio antes de los botones */
+}
+
+/* --- CONTENEDOR DE BOTONES (PC y Móvil) --- */
+.menu-container {
+    display: flex;
+    justify-content: center; /* Centra los botones */
+    align-items: center;
+    gap: 30px; /* Espacio entre botones (para cuando agregues el 1) */
+    flex-wrap: wrap; /* Asegura que se envuelvan si no caben */
+}
+
+/* --- ESTILOS DE LOS BOTONES GRANDES --- */
+.menu-btn {
+    display: block;
+    width: 250px; /* Ancho fijo para los botones */
+    padding: 25px 40px; /* Botón grande (Alto y ancho) */
+    
+    background-color: #58E054; /* Verde lima */
+    color: #1a1a1a; /* Texto oscuro */
+    
+    font-size: 1.5em; /* Texto grande */
+    font-weight: bold;
+    text-decoration: none; /* Quita el subrayado del enlace */
+    text-align: center;
+    text-transform: uppercase;
+    
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(88, 224, 84, 0.3);
+    
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+}
+
+.menu-btn:hover {
+    transform: scale(1.05); /* Efecto al pasar el mouse */
+    box-shadow: 0 10px 30px rgba(88, 224, 84, 0.5);
+}
+
+
+/* --- VISTA DE CELULAR (RESPONSIVE) --- */
+@media (max-width: 600px) {
+
+    /* Hacemos el logo y título un poco más pequeños */
+    .logo {
+        font-size: 2em;
+    }
+    h1 {
+        font-size: 1.8em;
+    }
+
+    /* Esto es lo que pediste:
+      En PC: [Btn 0] [Btn 1]
+      En Celu:
+      [Btn 0]
+      [Btn 1]
+    */
+    .menu-container {
+        flex-direction: column; /* Apila los botones verticalmente */
+        gap: 20px; /* Reduce el espacio entre ellos */
+        width: 100%;
+    }
+    
+    .menu-btn {
+        width: 90%; /* Ocupa casi todo el ancho del celular */
+        padding: 20px; /* Reduce un poco el padding vertical */
+    }
+}
