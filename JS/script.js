@@ -210,7 +210,7 @@ deletePlayerForm.addEventListener('submit', (event) => {
 // --- FUNCIONALIDAD PARA LA CAPTURA (ACTUALIZADA) ---
 
 const botonCapturar = document.getElementById('capturarBtn');
-// const botonPlantilla1 = document.getElementById('plantilla1');
+const botonPlantilla1 = document.getElementById('plantilla1');
 // Referencia a los nuevos botones
 const botonAnadir = document.getElementById('addPlayerBtn');
 const botonEliminar = document.getElementById('deletePlayerBtn');
@@ -220,7 +220,7 @@ const elementoACapturar = document.getElementById('capture-container');
 botonCapturar.addEventListener('click', () => {
     // Oculta TODOS los botones antes de tomar la imagen
     botonCapturar.style.display = 'none';
-    // botonPlantilla1.style.display = 'none';
+    botonPlantilla1.style.display = 'none';
     botonAnadir.style.display = 'none';   // OCULTA EL NUEVO BOTÓN
     botonEliminar.style.display = 'none'; // OCULTA EL NUEVO BOTÓN
 
@@ -242,7 +242,7 @@ botonCapturar.addEventListener('click', () => {
     
         // Vuelve a mostrar TODOS los botones
         botonCapturar.style.display = 'block';
-        // botonPlantilla1.style.display = 'inline-block'; // 'inline-block' para <a>
+        botonPlantilla1.style.display = 'inline-block'; // 'inline-block' para <a>
         botonAnadir.style.display = 'block';   // MUESTRA EL NUEVO BOTÓN
         botonEliminar.style.display = 'block'; // MUESTRA EL NUEVO BOTÓN
     });
